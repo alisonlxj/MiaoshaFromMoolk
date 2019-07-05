@@ -14,8 +14,11 @@ import java.util.Map;
 
 public class BaseController {
 
+    public static final String CONSUME = "";
+
+
     // 定义exceptionHandler解决未被controller层吸收的异常
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler({Exception.class})
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Object exceptionHandler(HttpServletRequest request, Exception ex){

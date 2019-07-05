@@ -14,7 +14,7 @@ public class CommenReturnType {
 
     public static CommenReturnType create(Object result, String status) {
         CommenReturnType commenReturnType = new CommenReturnType();
-        commenReturnType.setStatus("success");
+        commenReturnType.setStatus(status);
         commenReturnType.setData(result);
         return commenReturnType;
     }
