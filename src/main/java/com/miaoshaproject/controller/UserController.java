@@ -40,33 +40,22 @@ public class UserController extends BaseController{
     @Autowired
     private HttpServletRequest request;
 
+/*****************************************************
+ 接口方法
+ ****************************************************/
 
-    // 用户注册接口
-    @RequestMapping(value = "/regist", method = RequestMethod.POST, consumes = "application/x-www-form-urlencoded")
+    @RequestMapping("/get")
     @ResponseBody
-    public CommenReturnType register(@RequestParam(name = "telphone")String telphone,
-                                     @RequestParam(name = "otpCode")String otpCode,
-                                     @RequestParam(name = "name")String name,
-                                     @RequestParam(name="gender")Integer gender,
-                                     @RequestParam(name = "age")Integer age,
-                                     @RequestParam(name = "password")String password) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException {
-        // 验证手机号和对应的otpcode符合
-        HttpSession session = this.request.getSession();
-        String inSessionOtpCode = (String) session.getAttribute(telphone);
-
-        if(!com.alibaba.druid.util.StringUtils.equals(otpCode, inSessionOtpCode)){
-            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "短信验证码不合法");
+    public CommenReturnType getUser(@RequestParam(name="id")Integer id) throws BusinessException {
+        // 调用service获取对应id的用户对象 并返回前端
+        UserModel userModel = userService.getUserById(id);
+        if(userModel == null){
+            throw new BusinessException(EmBusinessError.USER_NOT_EXIST);
         }
-        // 用户注册流程
-        UserModel userModel = new UserModel();
-        userModel.setAge(age);
-        userModel.setGender(new Byte(String.valueOf(gender.intValue())));
-        userModel.setName(name);
-        userModel.setTelphone(telphone);
-        userModel.setRegisterMode("byPhone");
-        userModel.setEncriptPassword(encodeByMD5(password));
-        userService.regist(userModel);
-        return CommenReturnType.create(null);
+
+        // 将核心领域模型用户对象转换为 可供UI使用的viewobject
+        UserVO userVO = convertFromModel(userModel);
+        return CommenReturnType.create(userVO);
     }
 
 
@@ -87,22 +76,65 @@ public class UserController extends BaseController{
     }
 
 
-    @RequestMapping("/get")
-    @ResponseBody
-    public CommenReturnType getUser(@RequestParam(name="id")Integer id) throws BusinessException {
-        // 调用service获取对应id的用户对象 并返回前端
-        UserModel userModel = userService.getUserById(id);
-        if(userModel == null){
-            throw new BusinessException(EmBusinessError.USER_NOT_EXIST);
-        }
 
-        // 将核心领域模型用户对象转换为 可供UI使用的viewobject
-        UserVO userVO = convertFromModel(userModel);
-        return CommenReturnType.create(userVO);
+    // 用户注册接口
+    @RequestMapping(value = "/regist", method = RequestMethod.POST, consumes = "application/x-www-form-urlencoded")
+    @ResponseBody
+    public CommenReturnType register(@RequestParam(name = "telphone")String telphone,
+                                     @RequestParam(name = "otpCode")String otpCode,
+                                     @RequestParam(name = "name")String name,
+                                     @RequestParam(name="gender")Integer gender,
+                                     @RequestParam(name = "age")Integer age,
+                                     @RequestParam(name = "password")String password) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException {
+        // 验证手机号和对应的otpcode符合
+        HttpSession session = this.request.getSession();
+        String inSessionOtpCode = (String) session.getAttribute(telphone);
+        if(inSessionOtpCode == null){
+            System.out.println("session中取出的otpCode为空");
+        }
+        if(otpCode == null || otpCode == ""){
+            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "短信验证码为空");
+        }
+        // 用户注册流程
+        UserModel userModel = new UserModel();
+        userModel.setAge(age);
+        userModel.setGender(new Byte(String.valueOf(gender.intValue())));
+        userModel.setName(name);
+        userModel.setTelphone(telphone);
+        userModel.setRegisterNode("byPhone");
+        userModel.setEncriptPassword(this.encodeByMD5(password));
+        userService.regist(userModel);
+        return CommenReturnType.create(null);
+    }
+
+
+    // 用户登录接口
+    @RequestMapping(value = "/login", method = RequestMethod.POST, consumes = "application/x-www-form-urlencoded")
+    @ResponseBody
+    public CommenReturnType login(@RequestParam(name = "telphone")String telphone,
+                                  @RequestParam(name = "password")String password) throws BusinessException, UnsupportedEncodingException, NoSuchAlgorithmException {
+        // 入参校验
+        if(org.apache.commons.lang3.StringUtils.isEmpty(telphone) ||
+                org.apache.commons.lang3.StringUtils.isEmpty(password)){
+            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, "手机号或者密码不能为空");
+        }
+        // 用户登录服务， 校验登录合法
+        String encryptPw = encodeByMD5(password);
+        UserModel userModel = userService.validationLogin(telphone, encryptPw);
+
+        // 将登陆凭证加入到用户登录成功的session内
+        this.request.getSession().setAttribute("IS_LOGIN", true);
+        this.request.getSession().setAttribute("LOGIN_USER", userModel);
+        return CommenReturnType.create(null);
     }
 
 
 
+
+
+/*****************************************************
+私有辅助方法
+ ****************************************************/
     private UserVO convertFromModel(UserModel userModel){
         if(userModel == null){
             return null;

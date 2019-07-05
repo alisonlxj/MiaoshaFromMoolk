@@ -31,6 +31,7 @@ public class BaseController {
             resultData.put("errCode", EmBusinessError.UNKNOW_ERROR.getErrCode());
             resultData.put("errMsg", EmBusinessError.UNKNOW_ERROR.getErrMsg());
         }
+
         return CommenReturnType.create(resultData, "fail");
     }
 

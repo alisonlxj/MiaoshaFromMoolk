@@ -3,13 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f9320edd-1660-4d7e-8bdb-a58327a95690" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maiosha.iml" beforeDir="false" afterPath="$PROJECT_DIR$/maiosha.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/response/CommenReturnType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/response/CommenReturnType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/dao/UserDOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/dao/UserDOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/EmBusinessError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/EmBusinessError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/model/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/UserDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserDOMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/UserPasswordDOMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserPasswordDOMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/miaoshaproject/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/miaoshaproject/controller/BaseController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/miaoshaproject/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/miaoshaproject/controller/UserController.class" afterDir="false" />
     </list>
@@ -26,11 +28,17 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="44" column="115" lean-forward="true" selection-start-line="44" selection-start-column="115" selection-end-line="44" selection-end-column="115" />
+            <state relative-caret-position="183">
+              <caret line="122" selection-start-line="122" selection-end-line="122" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#877#896#0" />
+                <element signature="docComment;field#userService#0;class#UserController#0" />
+                <element signature="e#1553#1576#0" />
                 <element signature="method#getUser#0;class#UserController#0" />
+                <element signature="e#1572#1635#0" />
+                <element signature="method#getOtp#0;class#UserController#0" />
+                <element signature="e#1563#1674#0" />
+                <element signature="method#register#0;class#UserController#0" />
                 <element signature="method#convertFromModel#0;class#UserController#0" />
                 <element signature="method#encodeByMD5#0;class#UserController#0" />
               </folding>
@@ -38,13 +46,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/statics/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            <state relative-caret-position="184">
+              <caret line="74" column="20" lean-forward="true" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -53,37 +61,121 @@
       <file leaf-file-name="getotp.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/statics/getotp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="64" />
+            <state relative-caret-position="270">
+              <caret line="60" column="164" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="164" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="regist.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/statics/regist.html">
+      <file leaf-file-name="UserDOMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/dao/UserDOMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="104" column="64" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="64" />
+            <state relative-caret-position="324">
+              <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="63" column="47" lean-forward="true" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#7;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="method#getUserById#0;class#UserServiceImpl#0" />
+                <element signature="e#1381#1390#0" />
+                <element signature="method#regist#0;class#UserServiceImpl#0" />
+                <element signature="method#convertFromModel#0;class#UserServiceImpl#0" />
+                <element signature="method#convertPdoFromModel#0;class#UserServiceImpl#0" />
+                <element signature="method#convertFromUserDO#0;class#UserServiceImpl#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserPasswordDOMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserPasswordDOMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="60" column="131" selection-start-line="60" selection-start-column="131" selection-end-line="60" selection-end-column="131" />
+              <folding>
+                <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+                <element signature="e#301#493#0" />
+                <element signature="n#sql#0;n#mapper#0;n#!!top" />
+                <element signature="e#755#947#0" />
+                <element signature="n#select#0;n#mapper#0;n#!!top" />
+                <element signature="e#1090#1282#0" />
+                <element signature="n#select#1;n#mapper#0;n#!!top" />
+                <element signature="n#delete#0;n#mapper#0;n#!!top" />
+                <element signature="e#1709#1901#0" />
+                <element signature="e#2070#2262#0" />
+                <element signature="e#2549#2741#0" />
+                <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#update#0;n#mapper#0;n#!!top" />
+                <element signature="e#3478#3670#0" />
+                <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#update#1;n#mapper#0;n#!!top" />
+                <element signature="e#4076#4268#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDOMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserDOMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+              <folding>
+                <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+                <element signature="e#285#477#0" />
+                <element signature="n#sql#0;n#mapper#0;n#!!top" />
+                <element signature="e#1012#1204#0" />
+                <element signature="e#1378#1570#0" />
+                <element signature="n#select#1;n#mapper#0;n#!!top" />
+                <element signature="e#1798#1990#0" />
+                <element signature="n#delete#0;n#mapper#0;n#!!top" />
+                <element signature="e#2186#2378#0" />
+                <element signature="n#insert#0;n#mapper#0;n#!!top" />
+                <element signature="e#2535#2727#0" />
+                <element signature="n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="e#3202#3394#0" />
+                <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#6;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#if#6;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#update#0;n#mapper#0;n#!!top" />
+                <element signature="e#4688#4880#0" />
+                <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#3;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#if#5;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#update#1;n#mapper#0;n#!!top" />
+                <element signature="e#5635#5827#0" />
               </folding>
             </state>
           </provider>
@@ -93,7 +185,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/response/CommenReturnType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding>
                 <element signature="e#288#289#0" expanded="true" />
                 <element signature="e#336#337#0" expanded="true" />
@@ -102,29 +194,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmBusinessError.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/EmBusinessError.java">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonError.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/CommonError.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BusinessException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/BusinessException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="362">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -152,21 +226,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapping/UserPasswordDOMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/dao/UserPasswordDOMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/model/UserModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/viewobject/UserVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/CommonError.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/BusinessException.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/response/CommenReturnType.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/statics/regist.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/model/UserModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/dao/UserDOMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/EmBusinessError.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/UserService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/response/CommenReturnType.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/statics/getotp.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/statics/regist.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/statics/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/UserPasswordDOMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/UserDOMapper.xml" />
       </list>
     </option>
   </component>
@@ -281,7 +358,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="Bas&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/BaseController.java&#10;regis&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/statics/regist.html&#10;get&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/statics/getotp.html&#10;UserDoM&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/mapping/UserDOMapper.xml&#10;pom&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/pom.xml&#10;UserS&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java&#10;Base&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/BaseController.java&#10;UserC&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/UserController.java&#10;uSERc&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/UserController.java&#10;UserMOD&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/model/UserModel.java&#10;userC&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/UserController.java&#10;UserPass&#9;PSI&#9;JAVA://com.miaoshaproject.dao.UserPasswordDOMapper&#10;Pass&#9;PSI&#9;JAVA://com.miaoshaproject.dataObject.UserPasswordDO" />
+    <property name="SearchEverywhereHistoryKey" value="userdom&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/mapping/UserDOMapper.xml&#10;users&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java&#10;userdo&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/mapping/UserDOMapper.xml&#10;userser&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java&#10;userpass&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/dataObject/UserPasswordDO.java&#10;usermodel&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/model/UserModel.java&#10;userpa&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/mapping/UserPasswordDOMapper.xml&#10;userservi&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java&#10;user&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/mapping/UserDOMapper.xml&#10;Bas&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/BaseController.java&#10;regis&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/statics/regist.html&#10;get&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/statics/getotp.html&#10;UserDoM&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/resources/mapping/UserDOMapper.xml&#10;pom&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/pom.xml&#10;UserS&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java&#10;Base&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/BaseController.java&#10;UserC&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/UserController.java&#10;uSERc&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/UserController.java&#10;UserMOD&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/service/model/UserModel.java&#10;userC&#9;FILE&#9;file://E:/working_space_lixj/Git_Repository/MiaoSha_from_mook/MiaoshaFromMoolk/src/main/java/com/miaoshaproject/controller/UserController.java&#10;UserPass&#9;PSI&#9;JAVA://com.miaoshaproject.dao.UserPasswordDOMapper&#10;Pass&#9;PSI&#9;JAVA://com.miaoshaproject.dataObject.UserPasswordDO" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -370,12 +447,12 @@
       <option name="presentableId" value="Default" />
       <updated>1562065585221</updated>
       <workItem from="1562065586606" duration="8670000" />
-      <workItem from="1562152557904" duration="17374000" />
+      <workItem from="1562152557904" duration="26139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26044000" />
+    <option name="totallyTimeSpent" value="34809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -401,7 +478,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.24963397" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49926794" visible="true" weight="0.4442675" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49926794" visible="true" weight="0.45541403" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961783" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32961783" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -409,7 +486,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32961783" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37579617" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20859873" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.16544656" />
@@ -427,7 +504,7 @@
     <layout-to-restore>
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.46496814" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42675158" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -456,7 +533,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24963397" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49926794" visible="true" weight="0.3280255" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49926794" visible="true" weight="0.43630573" />
       <window_info anchor="right" id="Bean Validation" order="10" />
     </layout-to-restore>
   </component>
@@ -470,38 +547,67 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java</url>
-          <line>49</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java</url>
+          <line>98</line>
           <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java</url>
+          <line>105</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java</url>
           <line>56</line>
           <properties />
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java</url>
-          <line>25</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java</url>
+          <line>92</line>
           <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java</url>
-          <line>33</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java</url>
+          <line>93</line>
           <properties />
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java</url>
+          <line>122</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="26" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="this.request" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java">
@@ -509,8 +615,14 @@
         <state relative-caret-position="1242">
           <caret line="46" column="52" lean-forward="true" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#877#896#0" />
+            <element signature="docComment;field#userService#0;class#UserController#0" />
+            <element signature="e#1553#1576#0" />
             <element signature="method#getUser#0;class#UserController#0" />
+            <element signature="e#1572#1635#0" />
+            <element signature="method#getOtp#0;class#UserController#0" />
+            <element signature="e#1563#1674#0" />
+            <element signature="method#register#0;class#UserController#0" />
             <element signature="method#convertFromModel#0;class#UserController#0" />
             <element signature="method#encodeByMD5#0;class#UserController#0" />
           </folding>
@@ -578,10 +690,12 @@
         <state relative-caret-position="432">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getUserById#0;class#i#0" />
+            <element signature="method#getUserById#0;class#UserServiceImpl#0" />
+            <element signature="e#1381#1390#0" />
+            <element signature="method#regist#0;class#UserServiceImpl#0" />
+            <element signature="method#convertFromModel#0;class#UserServiceImpl#0" />
             <element signature="method#convertPdoFromModel#0;class#UserServiceImpl#0" />
-            <element signature="method#convertFromUserDO#0;class#i#0" />
+            <element signature="method#convertFromUserDO#0;class#UserServiceImpl#0" />
           </folding>
         </state>
       </provider>
@@ -610,34 +724,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/dataObject/UserPasswordDO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/dao/UserPasswordDOMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="56" column="50" lean-forward="true" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserPasswordDOMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,61 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/model/UserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/dataObject/UserDO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserDOMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-          <folding>
-            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
-            <element signature="e#285#477#0" />
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="e#1012#1204#0" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="e#1380#1572#0" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="e#1768#1960#0" />
-            <element signature="e#2117#2309#0" />
-            <element signature="e#2743#2935#0" />
-            <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#6;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#if#6;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#update#0;n#mapper#0;n#!!top" />
-            <element signature="e#4229#4421#0" />
-            <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#3;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#if#5;n#set#0;n#update#0;n#mapper#0;n#!!top" />
-            <element signature="n#update#1;n#mapper#0;n#!!top" />
-            <element signature="e#5176#5368#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,30 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/bind/annotation/CrossOrigin.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="46" column="1" lean-forward="true" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getUserById#0;class#i#0" />
-            <element signature="method#convertPdoFromModel#0;class#UserServiceImpl#0" />
-            <element signature="method#convertFromUserDO#0;class#i#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,31 +826,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/BusinessException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/CommonError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/EmBusinessError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -842,51 +840,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/response/CommenReturnType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="44" column="115" lean-forward="true" selection-start-line="44" selection-start-column="115" selection-end-line="44" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getUser#0;class#UserController#0" />
-            <element signature="method#convertFromModel#0;class#UserController#0" />
-            <element signature="method#encodeByMD5#0;class#UserController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/getotp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/statics/regist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="104" column="64" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="64" />
+        <state relative-caret-position="270">
+          <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -907,6 +864,245 @@
             <element signature="n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#7;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/CommonError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1966">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/dataObject/UserPasswordDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="53" lean-forward="true" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/model/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#717#718#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#878#879#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1005#1006#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1464#1465#0" expanded="true" />
+            <element signature="e#1518#1519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/error/EmBusinessError.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="74" column="20" lean-forward="true" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/statics/getotp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="60" column="164" lean-forward="true" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/response/CommenReturnType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/dao/UserDOMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserPasswordDOMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="60" column="131" selection-start-line="60" selection-start-column="131" selection-end-line="60" selection-end-column="131" />
+          <folding>
+            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+            <element signature="e#301#493#0" />
+            <element signature="n#sql#0;n#mapper#0;n#!!top" />
+            <element signature="e#755#947#0" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" />
+            <element signature="e#1090#1282#0" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="e#1709#1901#0" />
+            <element signature="e#2070#2262#0" />
+            <element signature="e#2549#2741#0" />
+            <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="e#3478#3670#0" />
+            <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" />
+            <element signature="e#4076#4268#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="e#877#896#0" />
+            <element signature="docComment;field#userService#0;class#UserController#0" />
+            <element signature="e#1553#1576#0" />
+            <element signature="method#getUser#0;class#UserController#0" />
+            <element signature="e#1572#1635#0" />
+            <element signature="method#getOtp#0;class#UserController#0" />
+            <element signature="e#1563#1674#0" />
+            <element signature="method#register#0;class#UserController#0" />
+            <element signature="method#convertFromModel#0;class#UserController#0" />
+            <element signature="method#encodeByMD5#0;class#UserController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/miaoshaproject/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="63" column="47" lean-forward="true" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
+          <folding>
+            <element signature="method#getUserById#0;class#UserServiceImpl#0" />
+            <element signature="e#1381#1390#0" />
+            <element signature="method#regist#0;class#UserServiceImpl#0" />
+            <element signature="method#convertFromModel#0;class#UserServiceImpl#0" />
+            <element signature="method#convertPdoFromModel#0;class#UserServiceImpl#0" />
+            <element signature="method#convertFromUserDO#0;class#UserServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/UserDOMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding>
+            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+            <element signature="e#285#477#0" />
+            <element signature="n#sql#0;n#mapper#0;n#!!top" />
+            <element signature="e#1012#1204#0" />
+            <element signature="e#1378#1570#0" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+            <element signature="e#1798#1990#0" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="e#2186#2378#0" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" />
+            <element signature="e#2535#2727#0" />
+            <element signature="n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="e#3202#3394#0" />
+            <element signature="n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#3;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#4;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#5;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#6;n#trim#0;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#3;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#4;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#5;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#if#6;n#trim#1;n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="e#4688#4880#0" />
+            <element signature="n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#0;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#1;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#2;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#3;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#4;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#if#5;n#set#0;n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" />
+            <element signature="e#5635#5827#0" />
           </folding>
         </state>
       </provider>

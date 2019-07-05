@@ -7,19 +7,10 @@ public class UserModel {
     private Byte gender;
     private Integer age;
     private String telphone;
-    private String registerMode;
+    private String registerNode;
     private String thirdPartyId;
 
     private String encriptPassword;
-
-
-    public String getEncriptPassword() {
-        return encriptPassword;
-    }
-
-    public void setEncriptPassword(String encriptPassword) {
-        this.encriptPassword = encriptPassword;
-    }
 
     public Integer getId() {
         return id;
@@ -61,12 +52,12 @@ public class UserModel {
         this.telphone = telphone;
     }
 
-    public String getRegisterMode() {
-        return registerMode;
+    public String getRegisterNode() {
+        return registerNode;
     }
 
-    public void setRegisterMode(String registerMode) {
-        this.registerMode = registerMode;
+    public void setRegisterNode(String registerNode) {
+        this.registerNode = registerNode;
     }
 
     public String getThirdPartyId() {
@@ -75,5 +66,13 @@ public class UserModel {
 
     public void setThirdPartyId(String thirdPartyId) {
         this.thirdPartyId = thirdPartyId;
+    }
+
+    public String getEncriptPassword() {
+        return encriptPassword;
+    }
+
+    public void setEncriptPassword(String encriptPassword) {
+        this.encriptPassword = encriptPassword;
     }
 }
