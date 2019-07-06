@@ -16,4 +16,7 @@ public interface ItemService {
     // 通过id获取商品详情
     public ItemModel getItemById(Integer id);
 
+    // 库存扣减
+    boolean decreaseStock(Integer itemId, Integer amount) throws BusinessException;
+
 }

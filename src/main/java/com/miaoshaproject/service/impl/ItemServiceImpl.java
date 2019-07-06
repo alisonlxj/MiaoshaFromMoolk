@@ -79,6 +79,12 @@ public class ItemServiceImpl implements ItemService {
         return convertModelFromDataobject(itemDO, itemStockDO);
     }
 
+    @Override
+    public boolean decreaseStock(Integer itemId, Integer amount) throws BusinessException {
+        int affectedRow = itemStockDOMapper.decreaseStock(itemId, amount);
+        return affectedRow > 0 ? true : false;
+    }
+
 
     private ItemDO convertFromItemModel(ItemModel itemModel) {
         if (itemModel == null) {
