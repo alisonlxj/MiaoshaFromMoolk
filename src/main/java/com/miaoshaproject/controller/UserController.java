@@ -23,7 +23,7 @@ import java.util.Random;
 
 @Controller("user")
 @RequestMapping("/user")
-@CrossOrigin(allowCredentials = "true", allowedHeaders = "*")   // 处理跨域共享，session数据共享问题
+@CrossOrigin(allowCredentials = "true", allowedHeaders = "*", origins = {"*"})   // 处理跨域共享，session数据共享问题
 public class UserController extends BaseController{
 
     /**

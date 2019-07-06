@@ -8,6 +8,8 @@ import com.miaoshaproject.error.BusinessException;
 import com.miaoshaproject.error.EmBusinessError;
 import com.miaoshaproject.service.UserService;
 import com.miaoshaproject.service.model.UserModel;
+import com.miaoshaproject.validator.ValidationResult;
+import com.miaoshaproject.validator.ValidatorImpl;
 import org.apache.catalina.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -23,6 +25,11 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserPasswordDOMapper userPasswordDOMapper;
+
+    @Autowired
+    private ValidatorImpl validator;
+
+
 
     @Override
     public UserModel getUserById(Integer id) {
@@ -42,12 +49,15 @@ public class UserServiceImpl implements UserService {
         if(userModel == null){
             throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
         }
-        if(StringUtils.isEmpty(userModel.getName()) || userModel.getGender() == null || userModel.getAge() == null
-                || StringUtils.isEmpty(userModel.getTelphone()) ){
-            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR);
-        }
-        UserDO userDO = convertFromModel(userModel);
 
+        //使用专门的校验器
+        // 只需要在需要校验的model上添加校验注解即可
+        ValidationResult result = validator.validate(userModel);
+        if(result.isHasError()){
+            throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR, result.getErrMsg());
+        }
+
+        UserDO userDO = convertFromModel(userModel);
         try{
             userDOMapper.insertSelective(userDO);
         }catch (DuplicateKeyException ex){
