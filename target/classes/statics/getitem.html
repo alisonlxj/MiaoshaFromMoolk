@@ -25,6 +25,14 @@
     <div class="page-header">
         <h2>商品详情</h2>
     </div>
+    <div class="row" id="promoStartDateContainer">
+        <div class="col-md-2 right-align">
+            <label for="promoStartDate" class="control-label">秒杀开始时间</label>
+        </div>
+        <div class="col-md-6">
+            <label class="control-label" style="color:red" id="promoStartDate"/>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-2 right-align">
             <label class="control-label">商品名</label>
@@ -47,6 +55,14 @@
         </div>
         <div class="col-md-6">
             <label class="control-label" name="price" id="price"/>
+        </div>
+    </div>
+    <div class="row" id="promoPriceContainer">
+        <div class="col-md-2 right-align">
+            <label for="promoPrice" class="control-label">秒杀价格</label>
+        </div>
+        <div class="col-md-6">
+            <label class="control-label" style="color:red" id="promoPrice"/>
         </div>
     </div>
     <div class="row">
@@ -108,6 +124,14 @@
                 $("#img0").attr("src", item.imgUrl);
                 $("#stock").text(item.stock);
                 $("#sales").text(item.sales);
+                if(item.promoStatus == 1){
+                    $("#promoStartDate").text("秒杀活动将于" + item.promoStartDate + "开始售卖");
+                    $("#promoPrice").text(item.promoPrice);
+                }else if(item.promoStatus == 2){
+                    $("#promoStartDate").text("秒杀正在进行中");
+                }else{
+
+                }
             },
             error: function (data) {
                 alert("获取商品详情, 原因为：" + data.responseText);

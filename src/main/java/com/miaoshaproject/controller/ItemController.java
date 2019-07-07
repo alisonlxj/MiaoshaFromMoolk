@@ -7,7 +7,8 @@ import com.miaoshaproject.error.BusinessException;
 import com.miaoshaproject.response.CommenReturnType;
 import com.miaoshaproject.service.ItemService;
 import com.miaoshaproject.service.model.ItemModel;
-import org.omg.CORBA.PUBLIC_MEMBER;
+import com.miaoshaproject.service.model.PromoModel;
+import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -69,6 +70,16 @@ public class ItemController extends BaseController {
         }
         ItemVO itemVO = new ItemVO();
         BeanUtils.copyProperties(itemModel, itemVO);
+        if(itemModel.getPromoModel() != null){
+            PromoModel pm = itemModel.getPromoModel();
+            itemVO.setPromoId(pm.getId());
+            itemVO.setPromoPrice(pm.getPromoItemPrice());
+            itemVO.setPromoStatus(pm.getStatus());
+            itemVO.setStartDate(pm.getStartDate().toString(DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")));
+        }else {
+            itemVO.setPromoStatus(0);
+        }
+
         return itemVO;
     }
 

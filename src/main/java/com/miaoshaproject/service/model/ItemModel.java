@@ -37,6 +37,17 @@ public class ItemModel {
     private String imgUrl;
 
 
+    //适用聚合模型
+    private PromoModel promoModel;
+
+    public PromoModel getPromoModel() {
+        return promoModel;
+    }
+
+    public void setPromoModel(PromoModel promoModel) {
+        this.promoModel = promoModel;
+    }
+
     public String getImgUrl() {
         return imgUrl;
     }
@@ -44,9 +55,6 @@ public class ItemModel {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
-
-
-
 
     public Integer getId() {
         return id;

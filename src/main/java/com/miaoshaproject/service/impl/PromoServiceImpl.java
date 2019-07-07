@@ -24,6 +24,17 @@ public class PromoServiceImpl implements PromoService {
             return null;
         }
         PromoModel promoModel = convertFromPromoDO(promoDO);
+        if(promoModel == null){
+            return null;
+        }
+        if(promoModel.getStartDate().isAfterNow()){
+            promoModel.setStatus(1);
+        }else if(promoModel.getEndDate().isBeforeNow()){
+            promoModel.setStatus(3);
+        }else{
+            promoModel.setStatus(2);
+        }
+
         return promoModel;
     }
 
@@ -37,6 +48,7 @@ public class PromoServiceImpl implements PromoService {
         BeanUtils.copyProperties(promoDo, promoModel);
         promoModel.setPromoItemPrice(new BigDecimal(promoDo.getPromoItemPrice()));
         promoModel.setStartDate(new DateTime(promoDo.getStartDate()));
+        promoModel.setEndDate(new DateTime(promoDo.getEndDate()));
         return promoModel;
     }
 
