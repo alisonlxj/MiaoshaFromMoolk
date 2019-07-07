@@ -85,6 +85,7 @@
                     console.log(data);
                     if (data.status == "success") {
                         alert("用户登录成功");
+                        window.location.href = "listitem.html";
                     } else {
                         alert("用户登录失败，原因为：" + data.data.errMsg);
                     }

@@ -26,7 +26,6 @@ public class UserModel {
     @NotNull(message = "注册方式不能为空")
     private String registerNode;
 
-    @NotNull(message = "密码不能为空")
     private String thirdPartyId;
 
     private String encriptPassword;

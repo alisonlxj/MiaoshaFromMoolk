@@ -85,6 +85,14 @@ public class ItemServiceImpl implements ItemService {
         return affectedRow > 0 ? true : false;
     }
 
+    @Override
+    @Transactional
+    // 只有真正的业务性的错误，才需要在EmBusinessError中开辟错误码
+    // 数据库操作中出现错误，正常报错即可，只要有被捕获就行   throws BusinessException
+    public void increaseSales(Integer itemId, Integer amount) throws BusinessException {
+        itemDOMapper.increaseSales(itemId, amount);
+    }
+
 
     private ItemDO convertFromItemModel(ItemModel itemModel) {
         if (itemModel == null) {

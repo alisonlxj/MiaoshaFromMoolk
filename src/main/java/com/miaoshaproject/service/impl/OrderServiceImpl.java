@@ -1,6 +1,9 @@
 package com.miaoshaproject.service.impl;
 
 import com.miaoshaproject.dao.OrderDOMapper;
+import com.miaoshaproject.dao.SequenceDOMapper;
+import com.miaoshaproject.dataObject.OrderDO;
+import com.miaoshaproject.dataObject.SequenceDO;
 import com.miaoshaproject.error.BusinessException;
 import com.miaoshaproject.error.EmBusinessError;
 import com.miaoshaproject.service.ItemService;
@@ -9,11 +12,15 @@ import com.miaoshaproject.service.UserService;
 import com.miaoshaproject.service.model.ItemModel;
 import com.miaoshaproject.service.model.OrderModel;
 import com.miaoshaproject.service.model.UserModel;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -25,6 +32,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderDOMapper orderDOMapper;
+
+    @Autowired
+    private SequenceDOMapper sequenceDOMapper;
 
 
     @Override
@@ -57,7 +67,58 @@ public class OrderServiceImpl implements OrderService {
         orderModel.setItemPrice(itemModel.getPrice());
         orderModel.setOrderPrice(itemModel.getPrice().multiply(new BigDecimal(amount)));
 
+        // 生成交易訂單號 -->因为id没设成自增，所以需要手动设置id
+        orderModel.setId(generateOrderNo());
+        OrderDO orderDO = convertFromOrderModel(orderModel);
+        orderDOMapper.insertSelective(orderDO);
+        // 商品销量增加
+        itemService.increaseSales(itemId, amount);
         // 4、返回
-        return null;
+        return orderModel;
     }
+
+
+    private OrderDO convertFromOrderModel(OrderModel orderModel){
+        if(orderModel == null){
+            return null;
+        }
+        OrderDO orderDO = new OrderDO();
+        BeanUtils.copyProperties(orderModel, orderDO);
+        orderDO.setItemPrice(orderModel.getItemPrice().doubleValue());
+        return orderDO;
+    }
+
+
+    public static void main(String[] args) {
+        Date now = new Date();
+        System.out.println(now.toString());
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(now).replace("-", ""));
+    }
+
+    // REQUIRES_NEW 表示即使被调用的函数外围已经有了事务控制，这个函数内也会新开一个事务，且正常提交
+    // 这种业务情况是为了防止 即使订单生成失败了，序列号也要正常自增，不会重复，为了安全起见
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    String generateOrderNo(){
+        // 订单号十六位，最后2为分库分表位
+        // 前八位年月日
+        StringBuilder sb = new StringBuilder();
+        Date now = new Date();
+        String dateSequence = new SimpleDateFormat("yyyy-MM-dd").format(now).replace("-", "");
+        sb.append(dateSequence);
+        // 中间6位自增序列
+        int sequence = 0;
+        SequenceDO sequenceDO = sequenceDOMapper.getSequenceByName("order_info");
+        sequence = sequenceDO.getCurrentValue();
+        sequenceDO.setCurrentValue(sequence + sequenceDO.getStep());
+        sequenceDOMapper.updateByPrimaryKeySelective(sequenceDO);
+        String seStr = String.valueOf(sequence);
+        for(int i=0; i<6-seStr.length(); i++){
+            sb.append(0);
+        }
+        sb.append(seStr);
+        // 最后分库分表暂不考虑，设为00
+        sb.append("00");
+        return sb.toString();
+    }
+
 }
